@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+</head>
+<body>
+
+    <form class="login-wrapper w-[475px] h-[580px] bg-white rounded-[20px] absolute top-0 left-0 bottom-0 right-0 m-auto px-[30px]" autocomplete="off">
+        <img class="mb-[43px] pt-[44px] pl-[36px] pr-[36px]" src="./images/Logo.svg" alt="Logo">
+        <h2 class="text-[22px] font-semibold text-center mb-[9px]">Sign In</h2>
+        <p class="text-[14px] text-center text-[#6C6C6C] mb-[50px]">Enter your credentials to access your account</p>
+        <p class="text-[14px] text-[#6C6C6C] font-medium mb-[10px]">Login</p>
+        <input class="w-full border-[2px] border-[#E5E5E5] rounded-[4px] outline-none p-[15px] text-[12px] placeholder-[#CDCDCD] mb-[20px]" type="text" placeholder="Enter your login" name="username">
+        <p class="text-[14px] text-[#6C6C6C] font-medium mb-[10px]">Password</p>
+        <input class="w-full border-[2px] border-[#E5E5E5] rounded-[4px] outline-none p-[15px] text-[12px] placeholder:text-[#CDCDCD] mb-[35px]" type="password" placeholder="Enter your password" name="password">
+        <button class="login-button w-full bg-[#FEAF00] p-[14px] text-center rounded-[4px] text-white text-[14px] mb-[11px] hover:bg-[#ffbb24] duration-300">SIGN IN</button>
+        <a class="text-black items-center justify-center flex text-[14px] hover:border-b-[1px] hover:border-black duration-300 pb-[5px]" href="./register.html">SIGN UP</a>
+    </form>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <script src="./js/login.js"></script>
+</body>
+</html>

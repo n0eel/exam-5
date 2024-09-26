@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(254,175,0);
+    background-image: linear-gradient(90deg, rgba(254,175,0,1) 0%, rgb(250, 217, 89) 100%);
+    font-family: "Montserrat", sans-serif;
+}
+
+form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

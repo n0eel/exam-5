@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+</head>
+<body>
+
+    <div class="flex">
+        <nav class="w-[20%] h-[100vh] bg-[#F2EAE1]">
+          <div class="pt-[18px] pl-[25px] mb-[54px]">
+            <img src="./images/Logo.svg" alt="" width="220  " height="24">
+          </div>
+
+          <label class="block">
+            <input class="admins-avatar hidden cursor-pointer" type="file">
+            <img class="admin-img mx-auto mb-[20px] cursor-pointer hover:scale-[1.1] duration-300" src="./images/profile.svg" alt="" width="128" height="128">
+          </label>
+          <h1 class="admins-name text-[17px] font-bold text-center mb-[10px]"></h1>
+            <p class="text-[14px] text-[#FEAF00] font-medium mb-[63px] text-center">Admin</p>
+            <button class="flex items-center bg-[#FEAF00] rounded-[4px] w-[193px] h-[41px] justify-center mx-auto hover:bg-[#ffbb24] duration-300">
+              <img src="./images/graduation-cap.svg" alt="">
+              <p class="text-[14px] font-medium pl-[14px] text-black">Students</p>
+            </button>
+            <button onclick="handleLogoutBtn()" class="logout-btn text-[14px] font-medium items-center justify-center flex absolute bottom-0 left-[100px] m-auto mb-[33px]">
+              <p class="pr-[23px]">Logout</p>
+              <img src="./images/leave.svg" alt="">
+            </button>
+        </nav>
+
+        <div class="w-[80%] bg-[#F8F8F8]">
+          <div class="bg-[#F2EAE1] h-[60px] flex items-center justify-between px-[30px]">
+            <img class="cursor-pointer" src="./images/back.svg" alt="back" width="18" height="18">
+            <div class="flex items-center">
+              <label class="relative w-[212px] h-[37px] py-[10px] pl-[13px] pr-[24px] rounded-[8px] bg-white flex mr-[27px]">
+                <input class="search-input w-[80%] outline-none text-[14px] leading-[14px] placeholder:text-[14px] placeholder:text-[#B4B4C6]" name="searchInput" type="text" placeholder="Search...">
+                <img class="ml-[29px]" src="./images/search.svg" alt="" width="24" height="24">
+              </label>
+            <img src="./images/notification.svg" alt="">
+            </div>
+          </div>
+          <div class="px-[30px]">
+            <div class="flex justify-between border-b-[2px] border-[#E5E5E5] py-[20px] items-center">
+              <h1 class="text-[22px] font-bold">Students List</h1>
+                <div class="flex gap-[30px]">
+                  <select class="sort-select outline-none cursor-pointer bg-[#F8F8F8]" name="sort-select" id="">
+                    <option value="name">By Name</option>
+                    <option value="age">By Age</option>
+                  </select>
+                <button onclick="handleAddStudentButton()" class="w-[200px] h-[44px] font-medium text-white text-[14px] bg-[#FEAF00] rounded-[4px] hover:bg-[#ffbb24] duration-300">ADD NEW STUDENT</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-[30px]">
+            <table class="w-full">
+              <thead class="w-[793px]">
+                  <tr class="">
+                      <th class="py-[21px] text-[12px] text-start font-bold text-[#ACACAC]"></th>
+                      <th class="py-[21px] text-[12px] text-start font-bold text-[#ACACAC]">Name</th>
+                      <th class="py-[21px] text-[12px] text-start font-bold text-[#ACACAC] pl-[120px]">Email</th>
+                      <th class="py-[21px] text-[12px] text-start font-bold text-[#ACACAC]">Phone</th>
+                      <th class="py-[21px] text-[12px] text-start font-bold text-[#ACACAC]">Enroll Number</th>
+                      <th class="py-[21px] text-[12px] text-start font-bold text-[#ACACAC]">Date admission</th>
+                  </tr>
+              </thead>
+
+              <tbody class="students-tbody bg-white">
+                <!-- <tr class="p-5"> -->
+                  <!-- <td class="px-[15px] py-[15px] rounded-tl-[8px] rounded-bl-[8px] w-[100px]">
+                    <img src="./images/profile.svg" alt="" width="65" height="55">
+                  </td>
+                  <td class="text-start">
+                    <p class="text-[14px] text-black text-start">User</p>
+                  </td>
+                  <td class="text-start pl-[120px]">
+                    <p>123@gmail.com</p>
+                  </td>
+                  <td>
+                    <p>+90808098</p>
+                  </td>
+                  <td>
+                    <p>8401840198</p>
+                  </td>
+                  <td>
+                    <p>08-dec, 2018</p>
+                  </td>
+                  <td class="items-center rounded-tr-[8px] rounded-br-[8px] space-x-[10px]">
+                    <button><img src="./images/more.svg" alt=""></button>
+                    <button><img src="./images/edit.svg" alt=""></button>
+                    <button><img src="./images/delete.svg" alt=""></button>
+                  </td> -->
+                <!-- </tr> -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-wrapper scale-0 fixed top-0 right-0 left-0 bottom-0 backdrop-blur duration-300" id="wrapper">
+      <div class="modal-inner w-[500px] h-[550px] bg-[#ffbb24]  absolute top-0 bottom-0 right-0 left-0  m-auto rounded-[20px] px-[30px] py-[30px]">
+        <!-- <form class="text-white" autocomplete="off">
+          <h1 class="text-[25px] text-center mb-[10px] font-bold">Edit User Details</h1>
+          <label class="block mb-[10px]">
+            <input class="hidden" type="file">
+            <img class="cursor-pointer mx-auto" src="./images/profile.svg" alt="" width="128" height="128">
+          </label>
+          <div class="flex justify-between">
+              <div class="w-[49%] space-y-[15px]">
+                <h2 class="text-[18px] font-medium text-white">Name</h2>
+                <input class="outline-none w-[200px] px-[10px] py-[10px] text-black" type="text" placeholder="Enter username" name="username">
+                <h2 class="text-[18px] font-medium text-white">Phone</h2>
+                <input class="outline-none w-[200px] px-[10px] py-[10px] text-black" type="text" placeholder="Enter phone" name="phone">
+                <h3 class="text-[18px] font-medium text-white">Date admittion</h3>
+                <input class="outline-none w-[200px] px-[10px] py-[10px] text-black" type="date" name="date">
+              </div>
+              <div class="w-[49%] space-y-[15px]">
+                <h2 class="text-[18px] font-medium text-white">Email</h2>
+                <input class="outline-none w-[200px] px-[10px] py-[10px] text-black" type="text" placeholder="Enter new email" name="email">
+                <h2 class="text-[18px] font-medium text-white">Enroil number</h2>
+                <input class="outline-none w-[200px] px-[10px] py-[10px] text-black mb-[15px]" type="text" placeholder="Enter enroil number" name="enroilnumber">
+                <div class="flex gap-[10px] pt-[49px] justify-end pr-[17px]"> 
+                  <button class="bg-white rounded-[4px] text-[#ffbb24] text-[15px] font-semibold px-[15px] py-[8px]">Cancel</button>
+                  <button class="bg-white rounded-[4px] text-[#ffbb24] text-[15px] font-semibold px-[15px] py-[8px]">Add</button>
+                </div>
+              </div>
+          </div>
+        </form> -->
+      </div>
+  </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+
+      <script src="./js/admin.js"></script>
+</body>
+</html>
